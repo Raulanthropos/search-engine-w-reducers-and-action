@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# Job Search Engine
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![screencapture-localhost-3000-2023-01-06-22_41_39-search-engine](https://user-images.githubusercontent.com/77921037/211097118-1e13f766-9aee-4a3d-8ba3-1f840af2350c.png)
+![screencapture-localhost-3000-2023-01-06-22_41_39-search-engine-favorites](https://user-images.githubusercontent.com/77921037/211097124-6ee009da-23da-4997-96fd-5aee6222ac35.png)
 
-## Available Scripts
+This job search engine allows users to search for job listings by keyword. The app displays a list of search results, and users can add a job to their favorites or access the job listing by clicking on it. The app also has a Favorites button that takes users to a section where they can view the jobs they have saved from their previous searches.
 
-In the project directory, you can run:
+### Features
+* Search for job listings by keyword
+* View a list of search results
+* Add jobs to favorites
+* Access job listings by clicking on them
+* View a list of favorite jobs
 
-### `npm start`
+How to use
+* Enter a keyword in the search field.
+* Press the search button to view a list of job listings.
+* To add a job to your favorites, click the 'Add to favorites' button.
+* To view a job listing, click on the job title.
+* To view your favorite jobs, click the 'Favorites' button.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I hope this job search engine helps you find your next career opportunity!
