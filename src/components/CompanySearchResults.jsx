@@ -18,9 +18,10 @@ const CompanySearchResults = () => {
 
   const getJobs = async () => {
     try {
-      const response = await fetch(baseEndpoint + params.companyName)
+      const response = await fetch(baseEndpoint + params.candidate_required_location)
       if (response.ok) {
         const { data } = await response.json()
+        console.log(data);
         setJobs(data)
       } else {
         alert('Error fetching results')
