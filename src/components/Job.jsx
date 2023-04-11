@@ -9,6 +9,20 @@ const Job = ({ data }) => {
   const selector = useSelector(state => state.favourite.content); //This accesses the store, sees the favourite key which correlates to the reducers/index.js, and accesses the initialState content directly!
   const isFavourite = selector.includes(data.title);
 
+  /*
+
+    <Col xs={4}>
+    <span style={{color: "black", textDecoration: "none"}}>Company name:</span><Link to={`/${data.company_name}`}><br></br><strong>{data.company_name}</strong></Link>
+    </Col>
+    <Col xs={4}>
+      <a href={data.url} target="_blank" rel="noreferrer">
+        {data.title} <br></br>
+      </a>
+        <strong>{data.candidate_required_location ? data.candidate_required_location : <span style={{color: "red"}}>Unspecified</span>}</strong>
+    </Col>
+
+  */
+
   const dispatch = useDispatch();
 
   return (
