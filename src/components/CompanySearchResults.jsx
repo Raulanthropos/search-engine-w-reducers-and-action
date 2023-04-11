@@ -14,6 +14,7 @@ const CompanySearchResults = () => {
 
   useEffect(() => {
     getJobs()
+    //eslint-disable-next-line
   }, [])
 
   const getJobs = async () => {
