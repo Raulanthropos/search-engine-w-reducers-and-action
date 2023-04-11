@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import Job from './Job'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { getListOfJobs } from '../redux/actions'
 
 const MainSearch = () => {
   const [query, setQuery] = useState('')
+  const [jobs, setJobs] = useState([])
+
+  const baseEndpoint = 'https://strive-benchmark.herokuapp.com/api/jobs?search='
 
   const handleChange = (e) => {
     setQuery(e.target.value)
@@ -14,13 +15,21 @@ const MainSearch = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    dispatch(getListOfJobs(query))
+
+    try {
+      const response = await fetch(baseEndpoint + query + '&limit=20')
+      if (response.ok) {
+        const { data } = await response.json()
+        setJobs(data)
+      } else {
+        alert('Error fetching results')
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const selector = useSelector(state => state.job.result) //This accesses the store, sees the job key which correlates to the reducers/index.js, and accesses the initialState content directly!
-
 
   return (
     <Container>
@@ -40,7 +49,7 @@ const MainSearch = () => {
           </Form>
         </Col>
         <Col xs={10} className="mx-auto mb-5">
-          {selector.map((jobData) => (
+          {jobs.map((jobData) => (
             <Job key={jobData._id} data={jobData} />
           ))}
         </Col>
@@ -48,4 +57,5 @@ const MainSearch = () => {
     </Container>
   )
 }
+
 export default MainSearch

@@ -14,15 +14,13 @@ const CompanySearchResults = () => {
 
   useEffect(() => {
     getJobs()
-    //eslint-disable-next-line
   }, [])
 
   const getJobs = async () => {
     try {
-      const response = await fetch(baseEndpoint + params.candidate_required_location)
+      const response = await fetch(baseEndpoint + params.companyName)
       if (response.ok) {
         const { data } = await response.json()
-        console.log(data);
         setJobs(data)
       } else {
         alert('Error fetching results')
