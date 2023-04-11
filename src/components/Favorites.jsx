@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { Trash } from "react-bootstrap-icons";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { removeFromFavourites } from "../redux/actions";
 
 const Favorites = () => {
   const navigate = useNavigate();
@@ -31,7 +30,10 @@ const Favorites = () => {
                         color="red"
                         className="mr-0"
                         onClick={() =>
-                          dispatch(removeFromFavourites(fav))
+                          dispatch({
+                            type: "REMOVE_FROM_FAVOURITES",
+                            payload: fav,
+                          })
                         }
                       ></Trash>
                   </ListGroupItem>
