@@ -7,9 +7,17 @@ const Job = ({ data }) => {
   
   const selector = useSelector(state => state.favourite.content);
 
-  const isFavourite = selector.includes(data.title);
+  const isFavourite = selector.includes(data._id);
 
-  /*
+  const dispatch = useDispatch();
+
+  return (
+  
+  <Row
+    className="mx-0 mt-3 p-3"
+    style={{ border: '1px solid #00000033', borderRadius: 4 }}
+  >
+
 
     <Col xs={4}>
     <span style={{color: "black", textDecoration: "none"}}>Company name:</span><Link to={`/${data.company_name}`}><br></br><strong>{data.company_name}</strong></Link>
@@ -20,34 +28,24 @@ const Job = ({ data }) => {
       </a>
         <strong>{data.candidate_required_location ? data.candidate_required_location : <span style={{color: "red"}}>Unspecified</span>}</strong>
     </Col>
-
-  */
-
-  const dispatch = useDispatch();
-
-  return (
-  
-  <Row
-    className="mx-0 mt-3 p-3"
-    style={{ border: '1px solid #00000033', borderRadius: 4 }}
-  >
-    <Col xs={4}>
+ 
+    {/* <Col xs={4}>
       <Link to={`/${data.company_name}`}>{data.company_name}</Link>
     </Col>
     <Col xs={4}>
       <a href={data.url} target="_blank" rel="noreferrer">
         {data.title}
       </a>
-    </Col>
+    </Col> */}
     {
     isFavourite ? (
       <Col xs={4} className="text-blue">Job added! <HeartbreakFill size={24} color="red" onClick={() => dispatch({
         type: 'REMOVE_FROM_FAVOURITES',
-        payload: data.title
+        payload: data._id
       })}></HeartbreakFill></Col>
     ) : (<Col xs={4}>Add to favorites! <HeartFill size={24} color="red" onClick={() => dispatch({
       type: 'ADD_TO_FAVOURITES',
-      payload: data.title
+      payload: data._id
     })}></HeartFill></Col>)
 }
   </Row>
